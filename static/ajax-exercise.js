@@ -35,8 +35,14 @@ $("#weather-form").on('submit', showWeather);
 
 function orderMelons(evt) {
     evt.preventDefault();
-
     // TODO: show the result message after your form
+    const formInputs = {
+        'qty': $('#qty-field').val(),
+        'melon_type': $('#melon-type-field').val()
+    };
+    $post("/order-melon", formInputs, (res) => {
+        alert("THIS IS WORKING");
+    });
     // TODO: if the result code is ERROR, make it show up in red (see our CSS!)
 }
 
